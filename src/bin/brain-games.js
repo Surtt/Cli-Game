@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { askUserName, greeting } from '..';
+import greeting from '..';
 
 greeting();
-askUserName();
