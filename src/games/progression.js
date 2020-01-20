@@ -1,23 +1,25 @@
-import startGame, { generateNumber } from '..';
+import generateNumber from '../utils';
+import startGame from '..';
 
 const description = 'What number is missing in the progression?';
+const progressionLength = 10;
 const getProgression = () => {
-  const firstNumber = generateNumber();
-  const step = generateNumber();
-  let progression = '';
-  for (let i = 0; i < 10; i += 1) {
-    progression += `${firstNumber + step * i} `;
+  const firstNumber = generateNumber(0, 10);
+  const step = generateNumber(1, 10);
+  const progression = [];
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression.push(firstNumber + step * i);
   }
-  return progression.slice(0, -1);
+  return progression;
 };
 
 const game = () => {
-  const hideNumber = generateNumber();
-  const progression = getProgression().split(' ');
-  const rightAnswer = progression[hideNumber];
-  progression[hideNumber] = '..';
+  const hideNumberPosition = generateNumber(0, 10);
+  const progression = getProgression();
+  const rightAnswer = progression[hideNumberPosition];
+  progression[hideNumberPosition] = '..';
   const question = progression.join(' ');
-  return [rightAnswer, question];
+  return [String(rightAnswer), question];
 };
 
 export default () => startGame(game, description);

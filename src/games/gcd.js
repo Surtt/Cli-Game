@@ -1,4 +1,5 @@
-import startGame, { generateNumber } from '..';
+import generateNumber from '../utils';
+import startGame from '..';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
@@ -10,8 +11,8 @@ const getGcd = (x, y) => {
 };
 
 const game = () => {
-  const a = generateNumber();
-  const b = generateNumber();
+  const a = generateNumber(1, 10);
+  const b = generateNumber(1, 10);
   const question = `${a} ${b}`;
   const rightAnswer = getGcd(a, b);
   return [String(rightAnswer), question];

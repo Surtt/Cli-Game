@@ -8,11 +8,6 @@ const greeting = (description) => {
   return userName;
 };
 
-export const generateNumber = () => {
-  const number = Math.floor(Math.random() * 10) + 1;
-  return number;
-};
-
 export default (game, description) => {
   const name = greeting(description);
 
