@@ -3,7 +3,7 @@ import startGame from '..';
 
 const description = 'What is the result of the expression?';
 
-const mathExpressions = ['+', '-', '*'];
+const operators = ['+', '-', '*'];
 
 const getExpression = (expression, a, b) => {
   switch (expression) {
@@ -21,11 +21,11 @@ const getExpression = (expression, a, b) => {
 const game = () => {
   const a = generateNumber(1, 10);
   const b = generateNumber(1, 10);
-  const expression = mathExpressions[generateNumber(0, mathExpressions.length)];
+  const expression = operators[generateNumber(0, operators.length - 1)];
   const question = `${a} ${expression} ${b}`;
   const rigthAnswer = getExpression(expression, a, b);
 
-  return [String(rigthAnswer), question];
+  return [String(rigthAnswer), String(question)];
 };
 
 export default () => startGame(game, description);

@@ -15,7 +15,7 @@ const game = () => {
   const b = generateNumber(1, 10);
   const question = `${a} ${b}`;
   const rightAnswer = getGcd(a, b);
-  return [String(rightAnswer), question];
+  return [String(rightAnswer), String(question)];
 };
 
 export default () => startGame(game, description);

@@ -7,7 +7,7 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 const game = () => {
   const question = generateNumber(1, 10);
   const rightAnswer = isEven(question) ? 'yes' : 'no';
-  return [rightAnswer, question];
+  return [rightAnswer, String(question)];
 };
 
 export default () => startGame(game, description);

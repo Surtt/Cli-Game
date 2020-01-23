@@ -9,8 +9,8 @@ const isPrime = (num) => {
 
   const sqrt = Math.ceil(Math.sqrt(num)) + 1;
 
-  for (let i = 2; i < sqrt; i += 1) {
-    if (num % i === 0) {
+  for (let divider = 2; divider < sqrt; divider += 1) {
+    if (num % divider === 0) {
       return false;
     }
   }
@@ -20,7 +20,7 @@ const isPrime = (num) => {
 const game = () => {
   const question = generateNumber(1, 100);
   const rightAnswer = isPrime(question) ? 'yes' : 'no';
-  return [String(rightAnswer), question];
+  return [rightAnswer, String(question)];
 };
 
 export default () => startGame(game, description);

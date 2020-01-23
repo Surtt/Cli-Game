@@ -19,7 +19,7 @@ const game = () => {
   const rightAnswer = progression[hideNumberPosition];
   progression[hideNumberPosition] = '..';
   const question = progression.join(' ');
-  return [String(rightAnswer), question];
+  return [String(rightAnswer), String(question)];
 };
 
 export default () => startGame(game, description);
