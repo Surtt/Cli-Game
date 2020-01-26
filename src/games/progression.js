@@ -13,13 +13,13 @@ const getProgression = () => {
   return progression;
 };
 
-const game = () => {
+const generateGameData = () => {
   const hideNumberPosition = generateNumber(0, 10);
   const progression = getProgression();
   const rightAnswer = progression[hideNumberPosition];
   progression[hideNumberPosition] = '..';
   const question = progression.join(' ');
-  return [String(rightAnswer), String(question)];
+  return [String(rightAnswer), question];
 };
 
-export default () => startGame(game, description);
+export default () => startGame(generateGameData, description);

@@ -5,8 +5,8 @@ const description = 'What is the result of the expression?';
 
 const operators = ['+', '-', '*'];
 
-const getExpression = (expression, a, b) => {
-  switch (expression) {
+const getСalculationResult = (operator, a, b) => {
+  switch (operator) {
     case '+':
       return a + b;
     case '-':
@@ -18,14 +18,14 @@ const getExpression = (expression, a, b) => {
   }
 };
 
-const game = () => {
+const generateGameData = () => {
   const a = generateNumber(1, 10);
   const b = generateNumber(1, 10);
-  const expression = operators[generateNumber(0, operators.length - 1)];
-  const question = `${a} ${expression} ${b}`;
-  const rigthAnswer = getExpression(expression, a, b);
+  const operator = operators[generateNumber(0, operators.length - 1)];
+  const question = `${a} ${operator} ${b}`;
+  const rigthAnswer = getСalculationResult(operator, a, b);
 
-  return [String(rigthAnswer), String(question)];
+  return [String(rigthAnswer), question];
 };
 
-export default () => startGame(game, description);
+export default () => startGame(generateGameData, description);

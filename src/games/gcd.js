@@ -10,12 +10,12 @@ const getGcd = (x, y) => {
   return y;
 };
 
-const game = () => {
+const generateGameData = () => {
   const a = generateNumber(1, 10);
   const b = generateNumber(1, 10);
   const question = `${a} ${b}`;
   const rightAnswer = getGcd(a, b);
-  return [String(rightAnswer), String(question)];
+  return [String(rightAnswer), question];
 };
 
-export default () => startGame(game, description);
+export default () => startGame(generateGameData, description);
