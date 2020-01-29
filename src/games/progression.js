@@ -14,7 +14,7 @@ const getProgression = () => {
 };
 
 const generateGameData = () => {
-  const hideNumberPosition = generateNumber(0, 10);
+  const hideNumberPosition = generateNumber(0, progressionLength - 1);
   const progression = getProgression();
   const rightAnswer = progression[hideNumberPosition];
   progression[hideNumberPosition] = '..';
